@@ -1,0 +1,22 @@
+{
+  "name": "cukeup-2014-js-workshop",
+  "version": "0.0.0",
+  "description": "CukeUp! London 2014 - Matt & Julien Cucumber.js workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cucumber-ltd/cukeup-2014-js-workshop.git"
+  },
+  "author": "Matt Wynne & Julien Biezemans <hello@cucumber.pro>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cucumber-ltd/cukeup-2014-js-workshop/issues"
+  },
+  "homepage": "https://github.com/cucumber-ltd/cukeup-2014-js-workshop",
+  "devDependencies": {
+    "cucumber": "~0.4.0"
+  }
+}
