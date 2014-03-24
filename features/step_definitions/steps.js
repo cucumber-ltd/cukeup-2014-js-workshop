@@ -1,5 +1,10 @@
 module.exports = function () {
 
+  this.World = function ShopWorld(callback) {
+    var self = {};
+    callback(null, self);
+  };
+
   this.Given(/^a Cucumber costs \$(\d+)$/, function (price, callback) {
     this.setPrice(parseInt(price), callback);
   });
