@@ -1,30 +1,5 @@
 var assert = require('assert');
-
-function Shop() {
-  var price, quantity;
-
-  var self = {
-    setPrice:
-      function (newPrice, callback) {
-        price = newPrice;
-        callback();
-      },
-
-    scan:
-      function (quantityScanned, callback) {
-        quantity = quantityScanned;
-        callback();
-      },
-
-    calculateTotal:
-      function (callback) {
-        var result = price * quantity;
-        callback(null, result);
-      }
-  };
-
-  return self;
-};
+var Shop = require('../../src/domain/shop');
 
 module.exports = function () {
   this.World = function ShopWorld(ready) {
