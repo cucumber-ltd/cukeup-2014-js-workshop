@@ -1,40 +1,5 @@
 module.exports = function () {
 
-  var assert = require('assert');
-  this.World = function ShopWorld(ready) {
-    var price, quantity;
-
-    var self = {
-      setPrice:
-        function (newPrice, callback) {
-          price = newPrice;
-          callback();
-        },
-
-      scan:
-        function (quantityScanned, callback) {
-          quantity = quantityScanned;
-          callback();
-        },
-
-      totalIs:
-        function (expectedTotal, callback) {
-          calculateTotal(function (err, actualTotal) {
-            assert.equal(actualTotal, expectedTotal);
-            callback();
-          });
-        }
-    };
-
-    function calculateTotal(callback) {
-      var result = price * total;
-      callback(null, result);
-    }
-
-    ready();
-    return self;
-  };
-
   this.Given(/^a Cucumber costs \$(\d+)$/, function (price, callback) {
     this.setPrice(parseInt(price), callback);
   });
