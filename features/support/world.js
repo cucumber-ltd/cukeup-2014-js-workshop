@@ -1,35 +1,48 @@
 var assert = require('assert');
 
+function Shop() {
+  var price, quantity;
+
+  var self = {
+    setPrice:
+      function (newPrice, callback) {
+        price = newPrice;
+        callback();
+      },
+
+    scan:
+      function (quantityScanned, callback) {
+        quantity = quantityScanned;
+        callback();
+      },
+
+    calculateTotal:
+      function (callback) {
+        var result = price * quantity;
+        callback(null, result);
+      }
+  };
+
+  return self;
+};
+
 module.exports = function () {
   this.World = function ShopWorld(ready) {
-    var price, quantity;
+    var shop = new Shop();
 
     var self = {
-      setPrice:
-        function (newPrice, callback) {
-          price = newPrice;
-          callback();
-        },
+      setPrice: shop.setPrice,
 
-      scan:
-        function (quantityScanned, callback) {
-          quantity = quantityScanned;
-          callback();
-        },
+      scan: shop.scan,
 
       totalIs:
         function (expectedTotal, callback) {
-          calculateTotal(function (err, actualTotal) {
+          shop.calculateTotal(function (err, actualTotal) {
             assert.equal(actualTotal, expectedTotal);
             callback();
           });
         }
     };
-
-    function calculateTotal(callback) {
-      var result = price * quantity;
-      callback(null, result);
-    }
 
     ready();
     return self;
