@@ -4,8 +4,8 @@
   "description": "CukeUp! London 2014 - Matt & Julien Cucumber.js workshop",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber.js",
-    "test-win": "cucumber-js"
+    "test": "WORLD=domain cucumber.js && WORLD=api cucumber.js",
+    "test-win": "(set WORLD=domain) && cucumber-js && (set WORLD=api) && cucumber-js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/cucumber-ltd/cukeup-2014-js-workshop",
   "devDependencies": {
-    "cucumber": "~0.4.0"
+    "cucumber": "~0.4.0",
+    "supertest": "^0.10.0"
+  },
+  "dependencies": {
+    "express": "^3.5.0"
   }
 }
