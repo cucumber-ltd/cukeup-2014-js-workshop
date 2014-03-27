@@ -27,7 +27,7 @@ module.exports = function () {
     };
 
     function calculateTotal(callback) {
-      var result = 0;
+      var result = price * total;
       callback(null, result);
     }
 
