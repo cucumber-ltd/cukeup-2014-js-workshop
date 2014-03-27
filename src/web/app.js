@@ -4,6 +4,7 @@ module.exports = function (shop) {
   var app = express();
 
   app.use(express.json());
+  app.use(express.static('public'));
   app.use(express.logger('dev'));
 
   app.post('/basket/cucumber', function (req, res, next) {

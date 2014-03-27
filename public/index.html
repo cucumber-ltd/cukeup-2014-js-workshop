@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Grocery Store Checkout</title>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <script src="js/vendor/angular.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app>
+    <section id="checkout" ng-controller="CheckoutController">
+      <input id="quantity" type="text" ng-model="cucumbers.quantity"></input>
+      <button id="scan" ng-click="scanCucumber()">Cucumber</button>
+      <h2>Total</h2>
+      <div id="total">{{ total }}</div>
+    </section>
+  </body>
+</html>
